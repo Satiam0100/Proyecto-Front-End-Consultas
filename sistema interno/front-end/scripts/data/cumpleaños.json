@@ -1,0 +1,26 @@
+[
+    {
+        "nombre": "Juan Pérez, Tienda La Castellana",
+        "fecha": "2023-10-10"
+    },
+    {
+        "nombre": "María Gómez",
+        "fecha": "2023-10-12"
+    },
+    {
+        "nombre": "Carlos López",
+        "fecha": "2023-11-03"
+    },
+    {
+        "nombre": "Ana Martínez",
+        "fecha": "2023-10-25"
+    },
+    {
+        "nombre": "Pedro Sánchez",
+        "fecha": "2023-12-15"
+    },
+    {
+        "nombre": "Luisa Fernández",
+        "fecha": "2023-10-30"
+    }
+]

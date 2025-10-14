@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultas Safel</title>
+    <link rel="stylesheet" href="estilos/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<link rel="icon" href="imagenes/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="imagenes/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <!-- Mensaje de bienvenida (oculto inicialmente) -->
+    <div id="welcomeMessageContainer" class="welcome-message">
+        <p id="welcomeMessage"></p>
+    </div>
+
+    <header class="header">
+        <!-- Botón para abrir el menú (solo en móviles) -->
+        <button class="header__open-nav-button" id="open-menu">≡</button>
+    
+        <!-- Contenedor del logo -->
+        <div class="header__logo-container">
+            <a href="" class="header__logo-link">
+                <img class="header__logo" src="imagenes/logo locatel.png" alt="Logo de la página">
+            </a>
+        </div>
+    
+        <!-- Menú de navegación -->
+        <nav class="header__nav" id="nav-menu">
+            <!-- Botón para cerrar el menú (solo en móviles) -->
+            <button class="header__close-nav-button" id="close-menu">×</button>
+    
+            <!-- Lista de elementos del menú -->
+            <ul class="header__nav-list">
+                <li><a class="header__nav-item" href="#" onclick="window.location.reload()">Inicio</a></li>
+                <li><a class="header__nav-item" href="#portfolio">Valores</a></li>
+                <li><a class="header__nav-item" href="RRHH.html" target="_blank">RRHH</a></li>
+                <li><a class="header__nav-item" href="#enlaces">Enlaces</a></li>
+                <li><a class="header__nav-item" href="https://catalogoweba203.locatel.com.ve/site/#/login" target="_blank" >Catalogo Web</a></li>
+                <li><a class="header__nav-item" href="https://gestorconveniosrmh.locatel.com.ve/" target="_blank">Catalogo de convenios</a></li>
+                <li><a class="header__nav-item" href="#cumpleaños">Cumpleaños del mes</a></li>
+                <li><a class="header__nav-item" href="#soporte">Soporte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+    // Selecciona los elementos del DOM
+const openMenuButton = document.getElementById('open-menu');
+const closeMenuButton = document.getElementById('close-menu');
+const navMenu = document.getElementById('nav-menu');
+const navItems = document.querySelectorAll('.header__nav-item'); // Selecciona todos los elementos del menú
+
+// Función para abrir el menú
+openMenuButton.addEventListener('click', () => {
+    navMenu.classList.add('header__nav--active'); // Agrega la clase para mostrar el menú
+});
+
+// Función para cerrar el menú
+closeMenuButton.addEventListener('click', () => {
+    navMenu.classList.remove('header__nav--active'); // Remueve la clase para ocultar el menú
+});
+
+// Cerrar el menú al hacer clic fuera de él
+document.addEventListener('click', (event) => {
+    if (!navMenu.contains(event.target) && !openMenuButton.contains(event.target)) {
+        navMenu.classList.remove('header__nav--active');
+    }
+});
+
+// Cerrar el menú al hacer clic en un elemento del menú (solo en móviles)
+navItems.forEach((item) => {
+    item.addEventListener('click', () => {
+        if (window.innerWidth <= 768) { // Solo aplica en móviles
+            navMenu.classList.remove('header__nav--active'); // Cierra el menú
+        }
+    });
+});
+    </script>
+
+    <main class="profile">
+        <div class="profile__wrapper">
+            <div class="profile__img-container">
+                <!-- Carrusel de imágenes -->
+                <div class="custom-carousel">
+                    <div class="carousel-track">
+                        <div class="carousel-slide active">
+                            <img src="imagenes/locatel.jpg" alt="Farmacia Safel" class="profile__img">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="imagenes/locatel.jpg" alt="Interior de Farmacia" class="profile__img">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="imagenes/locatel.jpg" alt="Atención al cliente" class="profile__img">
+                        </div>
+                    </div>
+                    <!-- Controles del carrusel -->
+                    <button class="carousel-control prev" aria-label="Slide anterior">&#10094;</button>
+                    <button class="carousel-control next" aria-label="Slide siguiente">&#10095;</button>
+                    <!-- Indicadores -->
+                    <div class="carousel-indicators">
+                        <span class="indicator active" data-index="0"></span>
+                        <span class="indicator" data-index="1"></span>
+                        <span class="indicator" data-index="2"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="profile__local-data-container">
+                <div class="profile__data">
+                    <div class="profile__description">
+                        <div id="clock" class="clock">
+                            <span id="time"></span>
+                            <span id="date"></span>
+                        </div>
+                        <h1>Farmacia Safel 777, S.A.</h1>
+                        <p>
+                            Un automercado de salud.
+                            En donde se ofrecen todos los productos y servicios que el cliente necesita para restablecer, mejorar o mantener su salud.
+                            Superar las expectativas de nuestros Clientes, Proveedores, Socios y Empleados, ofreciendo a toda la población, el surtido más amplio de productos y servicios de salud, en un ambiente de armonía, bienestar y con un alto contenido de innovación y diferenciación.
+                        </p>
+                    </div>
+                    <div class="profile__nada"></div>
+                    <div class="profile__tasa">
+                        <button class="profile__tasa-boton"><a href="https://www.bcv.org.ve/" class="profile__tasa-link" target="_blank">Tasa del dia</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elementos del carrusel
+            const track = document.querySelector('.carousel-track');
+            const slides = document.querySelectorAll('.carousel-slide');
+            const indicators = document.querySelectorAll('.indicator');
+            const prevBtn = document.querySelector('.carousel-control.prev');
+            const nextBtn = document.querySelector('.carousel-control.next');
+            let currentIndex = 0;
+            let autoPlayInterval;
+        
+            // Función para mover el carrusel
+            function goToSlide(index) {
+                track.style.transform = `translateX(-${index * 100}%)`;
+                currentIndex = index;
+                
+                // Actualizar indicadores
+                indicators.forEach(ind => ind.classList.remove('active'));
+                indicators[currentIndex].classList.add('active');
+            }
+        
+            // Navegación con botones
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                goToSlide(currentIndex);
+                resetAutoPlay();
+            });
+        
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                goToSlide(currentIndex);
+                resetAutoPlay();
+            });
+        
+            // Navegación con indicadores
+            indicators.forEach(indicator => {
+                indicator.addEventListener('click', () => {
+                    const slideIndex = parseInt(indicator.getAttribute('data-index'));
+                    goToSlide(slideIndex);
+                    resetAutoPlay();
+                });
+            });
+        
+            // Autoplay
+            function startAutoPlay() {
+                autoPlayInterval = setInterval(() => {
+                    currentIndex = (currentIndex + 1) % slides.length;
+                    goToSlide(currentIndex);
+                }, 5000);
+            }
+        
+            function resetAutoPlay() {
+                clearInterval(autoPlayInterval);
+                startAutoPlay();
+            }
+        
+            // Iniciar autoplay
+            startAutoPlay();
+        
+            // Pausar autoplay al interactuar
+            track.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+            track.addEventListener('mouseleave', startAutoPlay);
+        });
+    </script>
+
+    <script>
+        // Función para actualizar el reloj y la fecha
+function updateClock() {
+    const timeElement = document.getElementById('time'); // Elemento para la hora
+    const dateElement = document.getElementById('date'); // Elemento para la fecha
+
+    // Obtener la fecha y hora actual
+    const now = new Date();
+
+    // Formatear la hora en formato de 12 horas con AM/PM
+    let hours = now.getHours();
+    const minutes = String(now.getMinutes()).padStart(2, '0'); // Minutos (2 dígitos)
+    const seconds = String(now.getSeconds()).padStart(2, '0'); // Segundos (2 dígitos)
+    const ampm = hours >= 12 ? 'PM' : 'AM'; // Determinar AM o PM
+
+    // Convertir a formato de 12 horas
+    hours = hours % 12;
+    hours = hours ? hours : 12; // La hora 0 se convierte en 12
+
+    const timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
+
+    // Formatear la fecha (DD/MM/YYYY)
+    const day = String(now.getDate()).padStart(2, '0'); // Día (2 dígitos)
+    const month = String(now.getMonth() + 1).padStart(2, '0'); // Mes (2 dígitos)
+    const year = now.getFullYear(); // Año (4 dígitos)
+    const dateString = `${day}/${month}/${year}`;
+
+    // Actualizar el contenido de los elementos
+    timeElement.textContent = timeString; // Mostrar la hora
+    dateElement.textContent = dateString; // Mostrar la fecha
+}
+
+// Actualizar el reloj cada segundo
+setInterval(updateClock, 1000);
+
+// Mostrar el reloj inmediatamente al cargar la página
+updateClock();
+    </script>
+
+    <section class="galeria">
+        <div class="galeria__container">
+            <img src="imagenes/1.jpg" alt="Imagen 1" class="galeria__imagen">
+            <img src="imagenes/2.jpg" alt="Imagen 2" class="galeria__imagen">
+            <img src="imagenes/3.jpg" alt="Imagen 3" class="galeria__imagen">
+            <img src="imagenes/4.jpg" alt="Imagen 4" class="galeria__imagen">
+            <img src="imagenes/5.jpg" alt="Imagen 5" class="galeria__imagen">
+            <img src="imagenes/6.jpg" alt="Imagen 6" class="galeria__imagen">
+            <!-- Duplicar las imágenes para el efecto de scroll infinito -->
+            <img src="imagenes/1.jpg" alt="Imagen 1" class="galeria__imagen">
+            <img src="imagenes/2.jpg" alt="Imagen 2" class="galeria__imagen">
+            <img src="imagenes/3.jpg" alt="Imagen 3" class="galeria__imagen">
+            <img src="imagenes/4.jpg" alt="Imagen 4" class="galeria__imagen">
+            <img src="imagenes/5.jpg" alt="Imagen 5" class="galeria__imagen">
+            <img src="imagenes/6.jpg" alt="Imagen 6" class="galeria__imagen">
+        </div>
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox">
+            <span class="lightbox__cerrar">&times;</span>
+            <img class="lightbox__imagen" src="" alt="">
+        </div>
+    </section>
+
+    <script>
+        // Lightbox
+const lightbox = document.getElementById("lightbox");
+const lightboxImagen = document.querySelector(".lightbox__imagen");
+const imagenes = document.querySelectorAll(".galeria__imagen");
+const cerrarLightbox = document.querySelector(".lightbox__cerrar");
+
+// Abrir lightbox al hacer clic en una imagen
+imagenes.forEach(imagen => {
+    imagen.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        lightboxImagen.src = imagen.src;
+        lightboxImagen.alt = imagen.alt;
+    });
+});
+
+// Cerrar lightbox
+cerrarLightbox.addEventListener("click", () => {
+    lightbox.style.display = "none";
+});
+
+// Cerrar lightbox al hacer clic fuera de la imagen
+lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+        lightbox.style.display = "none";
+    }
+});
+
+    </script>
+
+    <section class="portfolio" id="portfolio">
+        <h2 class="portfolio__title">Valores</h2>
+        <div class="portfolio__project-container">
+            <div class="portfolio__project portfolio__project--1">
+                <div class="project-content">Puntualidad</div>
+                <div class="project-card">
+                    <p>La puntualidad es esencial para mantener un flujo de trabajo eficiente.</p>
+                </div>
+            </div>
+            <div class="portfolio__project portfolio__project--2">
+                <div class="project-content">Calidad</div>
+                <div class="project-card">
+                    <p>Nos esforzamos por ofrecer productos y servicios de la más alta calidad.</p>
+                </div>
+            </div>
+            <div class="portfolio__project portfolio__project--3">
+                <div class="project-content">Justicia</div>
+                <div class="project-card">
+                    <p>Tratamos a todos con equidad y respeto.</p>
+                </div>
+            </div>
+            <div class="portfolio__project portfolio__project--4">
+                <div class="project-content">Comunicación</div>
+                <div class="project-card">
+                    <p>Mantenemos una comunicación clara y efectiva en todo momento.</p>
+                </div>
+            </div>
+            <div class="portfolio__project portfolio__project--5">
+                <div class="project-content">Responsabilidad</div>
+                <div class="project-card">
+                    <p>Asumimos la responsabilidad de nuestras acciones y decisiones.</p>
+                </div>
+            </div>
+            <div class="portfolio__project portfolio__project--6">
+                <div class="project-content">Originalidad</div>
+                <div class="project-card">
+                    <p>Fomentamos la creatividad y la innovación en todo lo que hacemos.</p>
+                </div>
+            </div>
+            <div class="portfolio__project portfolio__project--7">
+                <div class="project-content">Seguridad</div>
+                <div class="project-card">
+                    <p>Garantizamos un entorno seguro para todos.</p>
+                </div>
+            </div>
+            <div class="portfolio__project portfolio__project--8">
+                <div class="project-content">Trabajo en equipo</div>
+                <div class="project-card">
+                    <p>Colaboramos para alcanzar objetivos comunes.</p>
+                </div>
+            </div>
+            <div class="portfolio__project portfolio__project--9">
+                <div class="project-content">Honestidad</div>
+                <div class="project-card">
+                    <p>Actuamos con integridad en todas nuestras interacciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="enlaces" id="enlaces">
+        <h2 class="enlaces__title">Enlaces</h2>
+        <div class="enlaces__container">
+            <!-- Categoría 1: Páginas Bancarias -->
+            <div class="enlaces__categoria">
+                <h3 class="enlaces__categoria-titulo">Páginas Bancarias</h3>
+                <div class="enlaces__subcategorias">
+                    <!-- Subcategoría 1: Bancos Nacionales -->
+                    <div class="enlaces__subcategoria">
+                        <h4 class="enlaces__subcategoria-titulo">Bancos Nacionales</h4>
+                        <ul class="enlaces__lista">
+                            <li><a href="https://www.bancodevenezuela.com/" class="enlaces__link" target="_blank">Banco de Venezuela</a></li>
+                            <li><a href="https://www.banesco.com/" class="enlaces__link" target="_blank">Banesco</a></li>
+                            <li><a href="https://www.provincial.com/personas.html" class="enlaces__link" target="_blank">Provincial</a></li>
+                            <li><a href="https://www.mercantilbanco.com/mercprod/index.html" class="enlaces__link" target="_blank">Mercantil</a></li>
+                            <li><a href="https://www.bancamiga.com/" class="enlaces__link" target="_blank">Bancamiga</a></li>
+                        </ul>
+                    </div>
+                    <!-- Subcategoría 2: Bancos Centrales -->
+                    <div class="enlaces__subcategoria">
+                        <h4 class="enlaces__subcategoria-titulo">Banco Central</h4>
+                        <ul class="enlaces__lista">
+                            <li><a href="https://www.bcv.org.ve/" class="enlaces__link" target="_blank">B.C.V</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Categoría 2: Páginas Gubernamentales -->
+            <div class="enlaces__categoria">
+                <h3 class="enlaces__categoria-titulo">Páginas Gubernamentales</h3>
+                <div class="enlaces__subcategorias">
+                    <!-- Subcategoría 1: Ministerio de Salud -->
+                    <div class="enlaces__subcategoria">
+                        <h4 class="enlaces__subcategoria-titulo">Consultas</h4>
+                        <ul class="enlaces__lista">
+                            <li><a href="http://contribuyente.seniat.gob.ve/BuscaRif/BuscaRif.jsp" class="enlaces__link" target="_blank">RIF</a></li>
+                            <li><a href="http://www.ivss.gov.ve/" class="enlaces__link" target="_blank">Seguro Social</a></li>
+                        </ul>
+                    </div>
+                    <!-- Subcategoría 2: Gobierno Nacional -->
+                    <div class="enlaces__subcategoria">
+                        <h4 class="enlaces__subcategoria-titulo">Gobierno Nacional</h4>
+                        <ul class="enlaces__lista">
+                            <li><a href="https://www.cne.gob.ec/" class="enlaces__link" target="_blank">Consulta de cedula de identidad</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Categoría 3: Páginas de Power BI y BW -->
+            <div class="enlaces__categoria">
+                <h3 class="enlaces__categoria-titulo">Power BI y B.W</h3>
+                <div class="enlaces__subcategorias">
+                    <!-- Subcategoría 1: Farmacias -->
+                    <div class="enlaces__subcategoria">
+                        <ul class="enlaces__lista">
+                            <li><a href="https://app.powerbi.com" class="enlaces__link" target="_blank">Power BI</a></li>
+                            <li><a href="#" class="enlaces__link" target="_blank">B.W</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const categorias = document.querySelectorAll(".enlaces__categoria");
+        
+            categorias.forEach((categoria) => {
+                const titulo = categoria.querySelector(".enlaces__categoria-titulo");
+                titulo.addEventListener("click", () => {
+                    console.log("Clic en el título"); // Depuración
+                    // Cierra todas las tarjetas
+                    categorias.forEach((c) => {
+                        if (c !== categoria) {
+                            c.classList.remove("open");
+                        }
+                    });
+                    // Abre o cierra la tarjeta clickeada
+                    categoria.classList.toggle("open");
+                });
+            });
+        });
+    </script>
+
+    <section class="cumpleanos" id="cumpleaños">
+        <h2 class="cumpleanos__title">
+            <span>🎉</span> Cumpleaños del Mes
+        </h2>
+        <div class="cumpleanos__lista" id="cumpleanos-lista">
+            <!-- Aquí se mostrarán los cumpleaños dinámicamente -->
+        </div>
+    </section>
+
+    <script src="scripts/cumpleaños.js"></script>
+
+
+    <button id="btn-flotante" class="btn-flotante" title="Ir al inicio">↑</button>
+    <script>
+        // Obtener el botón flotante
+        const btnFlotante = document.getElementById("btn-flotante");
+    
+        // Mostrar u ocultar el botón según el desplazamiento de la página
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) { // Mostrar el botón después de desplazarse 300px
+                btnFlotante.style.display = "block";
+            } else {
+                btnFlotante.style.display = "none";
+            }
+        });
+    
+        // Desplazarse al inicio de la página al hacer clic en el botón
+        btnFlotante.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0, // Lleva al inicio de la página
+                behavior: "smooth" // Desplazamiento suave
+            });
+        });
+    </script>
+
+    <section class="soporte" id="soporte">
+        <h2 class="soporte__title">Soporte</h2>
+        <div class="soporte__grid">
+            <!-- Recuadro 1: Números telefónicos -->
+            <div class="soporte__box soporte__box-phone">
+                <h3 class="soporte__box-title">Números telefónicos</h3>
+                <div class="soporte__box-content">
+                    <p>+1 234 567 890</p>
+                    <p>+1 987 654 321</p>
+                </div>
+            </div>
+    
+            <!-- Recuadro 2: Correos electrónicos -->
+            <div class="soporte__box soporte__box-email">
+                <h3 class="soporte__box-title">Correos electrónicos</h3>
+                <div class="soporte__box-content">
+                    <p>soporte@empresa.com</p>
+                    <p>contacto@empresa.com</p>
+                </div>
+            </div>
+    
+            <!-- Recuadro 3: WhatsApp -->
+            <div class="soporte__box soporte__box-whatsapp">
+                <h3 class="soporte__box-title">WhatsApp</h3>
+                <div class="soporte__box-banner">
+                    <img src="imagenes/banner whats contacto vip vip.png" alt="Banner de WhatsApp" class="soporte__banner-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const whatsappCard = document.querySelector(".soporte__card-whatsapp");
+            const whatsappBanner = document.getElementById("whatsapp-banner");
+        
+            // Despliega el banner al hacer clic en el título de la tarjeta
+            whatsappCard.querySelector(".soporte__card-header").addEventListener("click", () => {
+                whatsappCard.classList.toggle("open"); // Alterna la clase "open"
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cards = document.querySelectorAll(".soporte__card");
+        
+            cards.forEach((card) => {
+                const header = card.querySelector(".soporte__card-header");
+                header.addEventListener("click", () => {
+                    card.classList.toggle("open"); // Alterna la clase "open"
+                });
+            });
+        });
+    </script>
+
+    <script>
+         // Verificar si el usuario está logueado
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+        const username = localStorage.getItem("username");
+
+        if (isLoggedIn === "true" && username) {
+             // Mostrar el mensaje de bienvenida
+            const welcomeMessageContainer = document.getElementById("welcomeMessageContainer");
+            const welcomeMessage = document.getElementById("welcomeMessage");
+
+            welcomeMessage.textContent = `¡Bienvenido, ${username}!`;
+            welcomeMessageContainer.style.display = "block"; // Mostrar el mensaje
+
+             // Ocultar el mensaje después de 3 segundos (3000 milisegundos)
+            setTimeout(() => {
+                welcomeMessageContainer.style.display = "none";
+            }, 3000);
+        }
+    </script>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__section">
+                <h3 class="footer__title">Sobre Nosotros</h3>
+                <p class="footer__text">Un automercado de salud.
+                    En donde se ofrecen todos los productos y servicios que el cliente necesita para restablecer, mejorar o mantener su salud.
+                    Superar las expectativas de nuestros Clientes, Proveedores, Socios y Empleados, ofreciendo a toda la población, el surtido más amplio de productos y servicios de salud, en un ambiente de armonía, bienestar y con un alto contenido de innovación y diferenciación.</p>
+            </div>
+            <div class="footer__section">
+                <h3 class="footer__title">Enlaces Rápidos</h3>
+                <ul class="footer__links">
+                    <li><a href="#" class="footer__link">Inicio</a></li>
+                    <li><a href="#" class="footer__link">Servicios</a></li>
+                </ul>
+            </div>
+            <div class="footer__section">
+                <h3 class="footer__title">Contacto</h3>
+                <h4 class="footer__title-emails">Emails</h4>
+                <p class="footer__text">Email: sistemas1.lacastellana@locatelve.com</p>
+                <p class="footer__text">Email: sistemas2.lacastellana@locatelve.com</p>
+                <h4 class="footer__title-emails">Telefonos</h4>
+                <p class="footer__text">0212 274 5322</p>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p class="footer__copyright">&copy; 2025 Empresa Farmacia Safel 777, S.A. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

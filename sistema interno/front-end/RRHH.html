@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almacenamiento de Enlaces a PDF</title>
+    <link rel="stylesheet" href="estilos/stylesRHHH.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="imagenes/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="imagenes/favicon.ico" type="image/x-icon">  
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo-container">
+            <img class="header__logo" src="imagenes/logo locatel.png" alt="Logo de la página">
+        </div>
+        <a href="index.html" class="header__nav-item">Volver al Inicio</a>
+    </header>
+
+    <main class="main">
+        <section class="pdf-section">
+            <h1 class="pdf-section__title">Enlaces a PDF</h1>
+            <div class="pdf-section__container">
+                <!-- Tarjeta de ejemplo -->
+                <div class="pdf-card">
+                    <h2 class="pdf-card__title">Solicitud de vacaciones</h2>
+                    <p class="pdf-card__description">Descripción breve del documento PDF.</p>
+                    <a href="ruta/al/documento1.pdf" class="pdf-card__link" target="_blank">Abrir PDF</a>
+                </div>
+
+                <!-- Tarjeta de ejemplo -->
+                <div class="pdf-card">
+                    <h2 class="pdf-card__title">Solicitud de prestamo</h2>
+                    <p class="pdf-card__description">Descripción breve del documento PDF.</p>
+                    <a href="ruta/al/documento2.pdf" class="pdf-card__link" target="_blank">Abrir PDF</a>
+                </div>
+
+                <!-- Tarjeta de ejemplo -->
+                <div class="pdf-card">
+                    <h2 class="pdf-card__title">Documento 3</h2>
+                    <p class="pdf-card__description">Descripción breve del documento PDF.</p>
+                    <a href="ruta/al/documento3.pdf" class="pdf-card__link" target="_blank">Abrir PDF</a>
+                </div>
+            
+            </div>
+        </section>
+    </main>
+
+    <!-- Botón flotante para ir al inicio -->
+    <button id="btn-flotante" class="btn-flotante" title="Ir al inicio">↑</button>
+
+    <!-- JavaScript para el botón flotante -->
+    <script>
+        const btnFlotante = document.getElementById("btn-flotante");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+                btnFlotante.style.display = "block";
+            } else {
+                btnFlotante.style.display = "none";
+            }
+        });
+
+        btnFlotante.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+</body>
+</html>
