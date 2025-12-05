@@ -25,7 +25,7 @@ body {
 .header__logo {
     width: 200px;
     height: auto;
-    margin-left: 740px;
+    margin-left: 630px;
     transition: transform 0.3s ease;
 }
 

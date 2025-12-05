@@ -1,26 +1,26 @@
 [
     {
-        "nombre": "Juan Pérez, Tienda La Castellana",
-        "fecha": "2023-10-10"
+        "nombre": "Maria Valderrama, Tienda La Castellana, Farmacia",
+        "fecha": "2023-05-04"
     },
     {
-        "nombre": "María Gómez",
-        "fecha": "2023-10-12"
+        "nombre": "Isaac Lasry, Tienda La Castellana, Gerencia",
+        "fecha": "2023-05-29"
     },
     {
-        "nombre": "Carlos López",
-        "fecha": "2023-11-03"
+        "nombre": "Ingrid Guillen, Tienda La Castellana, Caja",
+        "fecha": "2023-05-28"
     },
     {
-        "nombre": "Ana Martínez",
-        "fecha": "2023-10-25"
-    },
-    {
-        "nombre": "Pedro Sánchez",
-        "fecha": "2023-12-15"
+        "nombre": "Helena Morales, Tienda La Castellana, Administracion",
+        "fecha": "2023-05-29"
     },
     {
         "nombre": "Luisa Fernández",
         "fecha": "2023-10-30"
+    },
+    {
+        "nombre": "Matias Sánchez",
+        "fecha": "2002-12-13"
     }
 ]

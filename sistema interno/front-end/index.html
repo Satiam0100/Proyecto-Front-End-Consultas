@@ -89,13 +89,13 @@ navItems.forEach((item) => {
                 <div class="custom-carousel">
                     <div class="carousel-track">
                         <div class="carousel-slide active">
-                            <img src="imagenes/locatel.jpg" alt="Farmacia Safel" class="profile__img">
+                            <img src="imagenes/locatel tienda.jpg" alt="Farmacia Safel" class="profile__img">
                         </div>
                         <div class="carousel-slide">
-                            <img src="imagenes/locatel.jpg" alt="Interior de Farmacia" class="profile__img">
+                            <img src="imagenes/locatel tienda.jpg" alt="Interior de Farmacia" class="profile__img">
                         </div>
                         <div class="carousel-slide">
-                            <img src="imagenes/locatel.jpg" alt="Atención al cliente" class="profile__img">
+                            <img src="imagenes/locatel tienda.jpg" alt="Atención al cliente" class="profile__img">
                         </div>
                     </div>
                     <!-- Controles del carrusel -->
@@ -124,9 +124,6 @@ navItems.forEach((item) => {
                         </p>
                     </div>
                     <div class="profile__nada"></div>
-                    <div class="profile__tasa">
-                        <button class="profile__tasa-boton"><a href="https://www.bcv.org.ve/" class="profile__tasa-link" target="_blank">Tasa del dia</a></button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -236,58 +233,85 @@ setInterval(updateClock, 1000);
 updateClock();
     </script>
 
-    <section class="galeria">
+    <!-- Sección de Tasas de Cambio -->
+<!-- Sección de Tasas del BCV -->
+<section class="exchange-rates" id="tasas-cambio">
+    <div class="exchange-rates__container">
+        <h2 class="exchange-rates__title">🏦 Tasas Oficiales </h2>
+        
+        <div id="rates-container" class="rates-container">
+            <!-- Las tasas se cargarán aquí -->
+        </div>
+    </div>
+</section>
+
+<section class="galeria">
+    <div class="galeria__header">
+        <h2 class="galeria__titulo">Galería</h2>
+    </div>
+    
+    <div class="galeria__wrapper">
+        <button class="galeria__boton galeria__boton--izquierdo" aria-label="Imagen anterior">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        
         <div class="galeria__container">
-            <img src="imagenes/1.jpg" alt="Imagen 1" class="galeria__imagen">
-            <img src="imagenes/2.jpg" alt="Imagen 2" class="galeria__imagen">
-            <img src="imagenes/3.jpg" alt="Imagen 3" class="galeria__imagen">
-            <img src="imagenes/4.jpg" alt="Imagen 4" class="galeria__imagen">
-            <img src="imagenes/5.jpg" alt="Imagen 5" class="galeria__imagen">
-            <img src="imagenes/6.jpg" alt="Imagen 6" class="galeria__imagen">
-            <!-- Duplicar las imágenes para el efecto de scroll infinito -->
-            <img src="imagenes/1.jpg" alt="Imagen 1" class="galeria__imagen">
-            <img src="imagenes/2.jpg" alt="Imagen 2" class="galeria__imagen">
-            <img src="imagenes/3.jpg" alt="Imagen 3" class="galeria__imagen">
-            <img src="imagenes/4.jpg" alt="Imagen 4" class="galeria__imagen">
-            <img src="imagenes/5.jpg" alt="Imagen 5" class="galeria__imagen">
-            <img src="imagenes/6.jpg" alt="Imagen 6" class="galeria__imagen">
+            <div class="galeria__track">
+                <img src="imagenes/1.jpg" alt="Imagen 1" class="galeria__imagen">
+                <img src="imagenes/2.jpg" alt="Imagen 2" class="galeria__imagen">
+                <img src="imagenes/3.jpg" alt="Imagen 3" class="galeria__imagen">
+                <img src="imagenes/4.jpg" alt="Imagen 4" class="galeria__imagen">
+                <img src="imagenes/5.jpg" alt="Imagen 5" class="galeria__imagen">
+                <img src="imagenes/6.jpg" alt="Imagen 6" class="galeria__imagen">
+                <!-- Duplicar las imágenes para el efecto de scroll infinito -->
+                <img src="imagenes/1.jpg" alt="Imagen 1" class="galeria__imagen">
+                <img src="imagenes/2.jpg" alt="Imagen 2" class="galeria__imagen">
+                <img src="imagenes/3.jpg" alt="Imagen 3" class="galeria__imagen">
+                <img src="imagenes/4.jpg" alt="Imagen 4" class="galeria__imagen">
+                <img src="imagenes/5.jpg" alt="Imagen 5" class="galeria__imagen">
+                <img src="imagenes/6.jpg" alt="Imagen 6" class="galeria__imagen">
+            </div>
         </div>
-        <!-- Lightbox -->
-        <div class="lightbox" id="lightbox">
-            <span class="lightbox__cerrar">&times;</span>
-            <img class="lightbox__imagen" src="" alt="">
+        
+        <button class="galeria__boton galeria__boton--derecho" aria-label="Imagen siguiente">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+    
+    <!-- Indicadores de posición -->
+    <div class="galeria__indicadores">
+        <div class="galeria__indicador galeria__indicador--activo"></div>
+        <div class="galeria__indicador"></div>
+        <div class="galeria__indicador"></div>
+        <div class="galeria__indicador"></div>
+        <div class="galeria__indicador"></div>
+        <div class="galeria__indicador"></div>
+    </div>
+    
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox__cerrar">&times;</span>
+        <img class="lightbox__imagen" src="" alt="">
+        <div class="lightbox__controles">
+            <button class="lightbox__boton lightbox__boton--anterior" aria-label="Imagen anterior">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <button class="lightbox__boton lightbox__boton--siguiente" aria-label="Imagen siguiente">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
         </div>
-    </section>
+    </div>
+</section>
 
-    <script>
-        // Lightbox
-const lightbox = document.getElementById("lightbox");
-const lightboxImagen = document.querySelector(".lightbox__imagen");
-const imagenes = document.querySelectorAll(".galeria__imagen");
-const cerrarLightbox = document.querySelector(".lightbox__cerrar");
-
-// Abrir lightbox al hacer clic en una imagen
-imagenes.forEach(imagen => {
-    imagen.addEventListener("click", () => {
-        lightbox.style.display = "flex";
-        lightboxImagen.src = imagen.src;
-        lightboxImagen.alt = imagen.alt;
-    });
-});
-
-// Cerrar lightbox
-cerrarLightbox.addEventListener("click", () => {
-    lightbox.style.display = "none";
-});
-
-// Cerrar lightbox al hacer clic fuera de la imagen
-lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) {
-        lightbox.style.display = "none";
-    }
-});
-
-    </script>
+<script src="/sistema interno/front-end/scripts/galeria.js"></script>
 
     <section class="portfolio" id="portfolio">
         <h2 class="portfolio__title">Valores</h2>
@@ -576,6 +600,8 @@ lightbox.addEventListener("click", (e) => {
             <p class="footer__copyright">&copy; 2025 Empresa Farmacia Safel 777, S.A. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <script src="/sistema interno/front-end/scripts/tasa.js"></script>
 
 </body>
 </html>
